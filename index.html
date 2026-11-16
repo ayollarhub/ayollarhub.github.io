@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayollar Hub — ayollar uchun makon</title>
+<meta name="description" content="Ayollar Hub — retseptlar, bozor, go'zallik, sport, salomatlik, kurslar va qo'llab-quvvatlash bitta joyda.">
+<meta name="theme-color" content="#E2518A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Ayollar Hub">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="img/icons/icon-192.png">
+<link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>
+/* Mavzuni sahifa chizilishidan oldin qo'llash (miltillamasligi uchun) */
+(function(){try{var t=localStorage.getItem('ah_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<!-- ========== KIRISH / RO'YXATDAN O'TISH ========== -->
+<div class="auth hidden" id="auth">
+  <div class="auth-box">
+    <div class="auth-brand">
+      <div class="logo">🌸 Ayollar Hub</div>
+      <h1>Bu makon siz uchun.</h1>
+      <p>Go'zallik, ijod, bilim va qo'llab-quvvatlashni bitta qulay joyda jamlang.</p>
+      <ul><li>✓ Ayollardan ayollarga bozor</li><li>✓ Sevimlilarni saqlash</li><li>✓ Anonim qo'llab-quvvatlash</li><li>✓ Telefon va kompyuterda bir xil</li></ul>
+    </div>
+    <div class="auth-form">
+      <div class="tabs2"><button type="button" class="on" data-act="authTab" data-v="login" data-i18n="login">Kirish</button><button type="button" data-act="authTab" data-v="register" data-i18n="register">Ro'yxatdan o'tish</button></div>
+
+      <form id="loginForm" novalidate>
+        <h2 data-i18n="welcome">Xush kelibsiz! 👋</h2>
+        <p class="muted small" data-i18n="login_sub">Hisobingizga kirib, Ayollar Hub'dan foydalaning.</p>
+        <label class="lbl" for="lEmail" data-i18n="email">Email</label>
+        <input class="field" id="lEmail" type="email" autocomplete="email" placeholder="siz@example.com" required>
+        <label class="lbl" for="lPass" data-i18n="password">Parol</label>
+        <input class="field" id="lPass" type="password" autocomplete="current-password" required>
+        <button class="btn block" type="submit" style="margin-top:10px"><span data-i18n="login">Kirish</span> →</button>
+        <div class="msg-err" id="lErr" role="alert"></div>
+        <div style="text-align:center;margin-top:10px"><button type="button" class="link-btn" data-act="forgot" data-i18n="forgot">Parolni unutdingizmi?</button></div>
+      </form>
+
+      <form id="regForm" class="hidden" novalidate>
+        <h2 data-i18n="reg_title">Akkaunt yarating 🌸</h2>
+        <p class="muted small" data-i18n="reg_sub">Bir daqiqada shaxsiy makoningizni yarating.</p>
+        <label class="lbl" for="rName" data-i18n="name">Ism</label>
+        <input class="field" id="rName" type="text" autocomplete="given-name" maxlength="40" required>
+        <label class="lbl" for="rEmail" data-i18n="email">Email</label>
+        <input class="field" id="rEmail" type="email" autocomplete="email" placeholder="siz@example.com" required>
+        <label class="lbl" for="rPass" data-i18n="password">Parol</label>
+        <input class="field" id="rPass" type="password" autocomplete="new-password" minlength="8" placeholder="Kamida 8 ta belgi" required>
+        <button class="btn block" type="submit" style="margin-top:10px"><span data-i18n="register">Ro'yxatdan o'tish</span> →</button>
+        <div class="msg-err" id="rErr" role="alert"></div>
+        <div class="msg-ok" id="rOk"></div>
+      </form>
+      <div style="text-align:center;margin-top:14px"><button type="button" class="link-btn" data-act="guest" data-i18n="guest">Mehmon sifatida ko'rish</button></div>
+      <p class="muted small" style="text-align:center;margin-top:10px">Ro'yxatdan o'tish orqali siz ma'lumotlaringiz faqat xizmat ko'rsatish uchun ishlatilishiga rozilik bildirasiz.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BIRINCHI SOZLASH (onboarding) ========== -->
+<div class="onb hidden" id="onb">
+  <div class="onb-in">
+    <div id="onb1">
+      <div class="glow">🌸</div>
+      <h1>Ayollar Hub</h1>
+      <p class="muted" data-i18n="lang_pick">Tilni tanlang</p>
+      <button class="opt" data-act="onbLang" data-v="uz">O'zbekcha</button>
+      <button class="opt" data-act="onbLang" data-v="ru">Русский</button>
+      <button class="opt" data-act="onbLang" data-v="en">English</button>
+    </div>
+    <div id="onb2" class="hidden">
+      <h1 data-i18n="interest_q">Nimaga ko'proq qiziqasiz?</h1>
+      <div style="margin:14px 0">
+        <button class="opt" data-act="onbInt" data-v="beauty">💖 Go'zallik</button>
+        <button class="opt" data-act="onbInt" data-v="creative">🎨 Ijod va pazandalik</button>
+        <button class="opt" data-act="onbInt" data-v="growth">🧠 O'z-o'zini rivojlantirish</button>
+        <button class="opt" data-act="onbInt" data-v="health">🏃‍♀️ Sog'liq va sport</button>
+      </div>
+      <label class="lbl" for="onbBd" style="text-align:left" data-i18n="birthday_q">Tug'ilgan kuningiz (ixtiyoriy)</label>
+      <input class="field" type="date" id="onbBd">
+      <p class="muted small" data-i18n="birthday_why">Tug'ilgan kuningizda sizni tabriklaymiz 🎁</p>
+      <button class="btn block" data-act="onbDone" style="margin-top:12px" data-i18n="enter_app">Ilovaga kirish</button>
+      <div class="msg-err" id="onbErr"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ASOSIY ILOVA ========== -->
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="brand" href="#/home">🌸 Ayollar Hub</a>
+    <nav class="dnav" id="dnav" aria-label="Asosiy menyu">
+      <a href="#/home" data-r="home" data-i18n="home">Bosh sahifa</a>
+      <a href="#/market" data-r="market" data-i18n="market">Bozor</a>
+      <a href="#/sweets" data-r="sweets" data-i18n="recipes">Retseptlar</a>
+      <a href="#/design" data-r="design" data-i18n="design">Dizayn</a>
+      <a href="#/cosmetics" data-r="cosmetics" data-i18n="cosmetics">Kosmetika</a>
+      <a href="#/courses" data-r="courses" data-i18n="courses">Kurslar</a>
+      <a href="#/psych" data-r="psych" data-i18n="psych">Psixolog</a>
+      <a href="#/fitness" data-r="fitness" data-i18n="fitness">Sport</a>
+      <a href="#/health" data-r="health" data-i18n="health">Salomatlik</a>
+    </nav>
+    <div class="tools">
+      <a class="icon-btn" href="#/cart" aria-label="Savat">🧺<span class="cnt hidden" id="cartCnt">0</span></a>
+      <a class="icon-btn" href="#/profile" aria-label="Profil" id="profBtn">👤</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page" id="p-home"></section>
+  <section class="page narrow" id="p-quiz"></section>
+  <section class="page" id="p-sweets"></section>
+  <section class="page" id="p-market"></section>
+  <section class="page narrow" id="p-cart"></section>
+  <section class="page" id="p-design"></section>
+  <section class="page" id="p-cosmetics"></section>
+  <section class="page narrow" id="p-courses"></section>
+  <section class="page narrow" id="p-psych"></section>
+  <section class="page narrow" id="p-fitness"></section>
+  <section class="page" id="p-health"></section>
+  <section class="page narrow" id="p-feedback"></section>
+  <section class="page narrow" id="p-profile"></section>
+</main>
+
+<footer id="foot">
+  © <span id="year"></span> Ayollar Hub · Ma'lumotlar umumiy xarakterda, tibbiy maslahat o'rnini bosmaydi ·
+  <a href="#/feedback">Fikr bildirish</a>
+</footer>
+
+<nav class="bnav" id="bnav" aria-label="Pastki menyu">
+  <a href="#/home" data-r="home"><i>🏠</i><span data-i18n="home">Bosh sahifa</span></a>
+  <a href="#/sweets" data-r="sweets"><i>🍰</i><span data-i18n="recipes">Retseptlar</span></a>
+  <a href="#/market" data-r="market"><i>🛍️</i><span data-i18n="market">Bozor</span></a>
+  <a href="#/fitness" data-r="fitness"><i>🏃‍♀️</i><span data-i18n="fitness">Sport</span></a>
+  <a href="#/health" data-r="health"><i>🩷</i><span data-i18n="health">Salomatlik</span></a>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="modal-in" id="modalIn"></div></div>
+
+<script src="js/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/content.js"></script>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

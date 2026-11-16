@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin panel — Ayollar Hub</title>
+<meta name="theme-color" content="#E2518A">
+<link rel="icon" type="image/png" href="img/icons/icon-192.png">
+<link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>(function(){try{var t=localStorage.getItem('ah_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="index.html">🌸 Ayollar Hub</a><span class="badge" style="margin-left:6px">Admin</span>
+  <div class="tools"><a class="icon-btn" href="index.html">↩ Saytga</a><button class="icon-btn hidden" id="outBtn" data-act="logout">Chiqish</button></div>
+</div></header>
+
+<div id="gate" class="narrow" style="padding:30px 16px">
+  <div class="card" id="gateLogin">
+    <h2>🛠 Admin panelga kirish</h2>
+    <p class="muted" style="margin:6px 0 12px">Saytdagi akkauntingiz bilan kiring. Faqat admin huquqi bor akkauntlar kira oladi.</p>
+    <form id="admLogin" novalidate>
+      <input class="field" id="aEmail" type="email" placeholder="Email" autocomplete="email">
+      <input class="field" id="aPass" type="password" placeholder="Parol" autocomplete="current-password">
+      <button class="btn block" type="submit">Kirish</button>
+      <div class="msg-err" id="aErr"></div>
+    </form>
+  </div>
+  <div class="card hidden" id="gateNoAdmin"></div>
+</div>
+
+<div class="adm-layout hidden" id="adm">
+  <nav class="adm-side" id="admNav">
+    <button data-act="tab" data-v="stats" class="on">📊 Statistika</button>
+    <button data-act="tab" data-v="products">🛍 Mahsulotlar</button>
+    <button data-act="tab" data-v="orders">📦 Buyurtmalar</button>
+    <button data-act="tab" data-v="posts">💬 Postlar</button>
+    <button data-act="tab" data-v="users">👥 Foydalanuvchilar</button>
+  </nav>
+  <section id="admMain"></section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal hidden" id="modal" role="dialog" aria-modal="true"><div class="modal-in" id="modalIn"></div></div>
+
+<script src="js/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/content.js"></script>
+<script src="js/core.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
