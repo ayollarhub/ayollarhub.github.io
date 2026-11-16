@@ -63,5 +63,6 @@ hamma joyda bir xil, bitta baza (Supabase) orqali ulangan, xatolarsiz, admin pan
 - Supabase → Authentication → URL Configuration: Site URL = sayt manzili bo'lishi shart (email tasdiqlash havolasi uchun).
 
 ## O'zgarishlar tarixi
+- **1.0.2 (2026-11-16)** — Xato tuzatildi: "Meni admin qil" tugmasi rolni saqlamasdi (trigger qaytarardi) — `supabase/patch_001_admin_claim.sql`. Profil sahifasi rolni bazadan yangilab oladi.
 - **1.0.1 (2026-11-16)** — Sayt ayollarhub tashkilotiga ko'chirildi: manzil https://ayollarhub.github.io, Supabase Site URL yangilandi.
 - **1.0.0 (2026-11-16)** — Ilova to'liq qayta yozildi: Supabase, admin panel, PWA, GitHub Pages.
