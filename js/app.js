@@ -518,7 +518,8 @@ RENDER.feedback = function(){
 };
 
 /* --- Profil --- */
-RENDER.profile = function(){
+RENDER.profile = async function(){
+  if(isIn()){ try{ const fresh = await AH.loadProfile(S.user.id); if(fresh) S.profile = fresh; }catch(e){} }
   const el = $('p-profile'), P = S.profile||{};
   const theme = AH.store.get('ah_theme')||'auto';
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent), standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
