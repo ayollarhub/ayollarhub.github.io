@@ -21,7 +21,7 @@ hamma joyda bir xil, bitta baza (Supabase) orqali ulangan, xatolarsiz, admin pan
 | PWA | `manifest.webmanifest`, `sw.js`, `img/icons/` |
 
 - Baza: Supabase (loyiha: `hjmhvcxekocmhphkkvcq`)
-- Hosting: GitHub Pages (`Ziyodaziz/ayollar-hub`)
+- Hosting: GitHub Pages — **https://ayollarhub.github.io** (repo: `ayollarhub/ayollarhub.github.io`, tashkilot: ayollarhub)
 - Saytni yangilash: fayllarni GitHub'ga yuklash → 1-2 daqiqada sayt yangilanadi. `sw.js` ichidagi `VERSION` ni oshirish kerak.
 
 ## 1-bosqich (bajarildi ✅)
@@ -63,4 +63,5 @@ hamma joyda bir xil, bitta baza (Supabase) orqali ulangan, xatolarsiz, admin pan
 - Supabase → Authentication → URL Configuration: Site URL = sayt manzili bo'lishi shart (email tasdiqlash havolasi uchun).
 
 ## O'zgarishlar tarixi
+- **1.0.1 (2026-11-16)** — Sayt ayollarhub tashkilotiga ko'chirildi: manzil https://ayollarhub.github.io, Supabase Site URL yangilandi.
 - **1.0.0 (2026-11-16)** — Ilova to'liq qayta yozildi: Supabase, admin panel, PWA, GitHub Pages.

@@ -1,5 +1,7 @@
 # 🌸 Ayollar Hub
 
+**Sayt:** https://ayollarhub.github.io · **Admin:** https://ayollarhub.github.io/admin.html
+
 Ayollar uchun makon: retseptlar, ayollardan ayollarga bozor, go'zallik, sport, salomatlik, kurslar va anonim qo'llab-quvvatlash.
 
 - **Sayt va ilova bitta kod:** kompyuterda sayt, telefonda ilova (PWA). iPhone'da Safari → Ulashish → "Bosh ekranga qo'shish".
